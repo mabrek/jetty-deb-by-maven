@@ -1,0 +1,12 @@
+*.swp
+*.deb
+jetty-[0-9\.v]*
+jetty_[0-9\.v]*
+*.log
+*.diff
+/*.patch
+/*.patch.gz
+*.tar.gz
+*.diff.gz
+*.dsc
+*.build
