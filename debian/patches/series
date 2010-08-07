@@ -1,3 +1,2 @@
-0001-osgi-module-commented-out-not-needed-for-deb-packagi.patch
-0002-switched-from-eclipse-drop-to-maven-artifacts.patch
-0003-useless-for-package-modules-removed.patch
+0001-switched-from-eclipse-drop-to-maven-artifacts.patch
+0002-removed-unused-in-package-modules.patch
