@@ -10,3 +10,4 @@ jetty_[0-9\.v]*
 *.diff.gz
 *.dsc
 *.build
+.m2

@@ -10,7 +10,7 @@ JETTYDISTLIB         := jetty-distribution/target/distribution/lib
 
 common-build-arch common-build-indep:: debian/stamp-mvn-build
 debian/stamp-mvn-build:
-	MAVEN_OPTS="-XX:MaxPermSize=256M" mvn -DskipTests -Dmaven.repo.local=$(CURDIR)/debian/tmp/.m2/repository install
+	MAVEN_OPTS="-XX:MaxPermSize=256M" mvn -DskipTests -Dmaven.repo.local=$(CURDIR)/../.m2/repository install
 	touch debian/stamp-mvn-build
 
 clean::
