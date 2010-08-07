@@ -53,7 +53,7 @@ binary-post-install/libjetty-java::
 	install -d $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/policy
 	install $(JETTYDISTLIB)/policy/jetty.policy $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/policy
 # Jetty Start Jar
-	install $(JETTYDISTLIB)/jetty-start-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/start.jar
+	install $(JETTYDISTLIB)/../start.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/
 
 get-orig-source:
 	uscan --download-version $(DEB_UPSTREAM_VERSION) --force-download --rename
