@@ -1,0 +1,45 @@
+From 674bb72b278d9b2013ffd790729774f2b6da12da Mon Sep 17 00:00:00 2001
+From: Anton Lebedevich <mabrek@gmail.com>
+Date: Sat, 7 Aug 2010 22:19:38 +0400
+Subject: [PATCH 3/3] useless for package modules removed
+
+---
+ pom.xml |   10 ----------
+ 1 files changed, 0 insertions(+), 10 deletions(-)
+
+diff --git a/pom.xml b/pom.xml
+index 74c41de..5b5ee9c 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -279,13 +279,11 @@
+     <module>jetty-client</module>
+     <module>jetty-xml</module>
+     <module>jetty-security</module>
+-    <module>jetty-jaspi</module>
+     <module>jetty-servlet</module>
+     <module>jetty-webapp</module>
+     <module>jetty-servlets</module>
+     <module>jetty-jsp-2.1</module>
+     <module>jetty-deploy</module>
+-    <module>jetty-ajp</module>
+     <module>jetty-jmx</module>
+     <module>jetty-jndi</module>
+     <module>jetty-annotations</module>
+@@ -293,14 +291,6 @@
+     <module>jetty-rewrite</module>
+     <module>jetty-policy</module>
+     <module>jetty-start</module>
+-    <!--module>jetty-osgi</module-->
+-    <module>test-continuation</module>
+-    <module>test-continuation-jetty6</module>
+-    <module>test-jetty-servlet</module>
+-    <module>test-jetty-webapp</module>
+-    <module>jetty-aggregate</module>
+-    <module>example-jetty-embedded</module>
+-    <module>tests</module>
+     <module>jetty-distribution</module>
+   </modules>
+   <dependencyManagement>
+-- 
+1.6.3.3
+
