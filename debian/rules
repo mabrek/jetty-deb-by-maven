@@ -19,6 +19,7 @@ clean::
 
 binary-post-install/libjetty-java::
 # Jetty Libs
+	install -d $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib
 	install $(JETTYDISTLIB)/jetty-client-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-client.jar
 	install $(JETTYDISTLIB)/jetty-continuation-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-continuation.jar
 	install $(JETTYDISTLIB)/jetty-deploy-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-deploy.jar
@@ -39,15 +40,18 @@ binary-post-install/libjetty-java::
 	install $(JETTYDISTLIB)/jetty-websocket-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-websocket.jar
 	install $(JETTYDISTLIB)/jetty-xml-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-xml.jar
 # Jetty JNDI 3rd Party Jars
+	install -d $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jndi
 	install $(JETTYDISTLIB)/jndi/activation-1.1.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jndi
 	install $(JETTYDISTLIB)/jndi/geronimo-jta_1.1_spec-1.1.1.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jndi
 	install $(JETTYDISTLIB)/jndi/mail-1.4.1.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jndi
 # Jetty JSP 3rd Party Jars
+	install -d $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp
 	install $(JETTYDISTLIB)/jsp/ecj-3.5.1.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp
 	install $(JETTYDISTLIB)/jsp/jetty-jsp-2.1-7.1.6.v20100715.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp
 	install $(JETTYDISTLIB)/jsp/jsp-2.1-glassfish-2.1.v20100127.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp
 	install $(JETTYDISTLIB)/jsp/jsp-api-2.1-glassfish-2.1.v20100127.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp
 # Jetty Policy
+	install -d $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/policy
 	install $(JETTYDISTLIB)/policy/jetty.policy $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/policy
 # Jetty Start Jar
 	install $(JETTYDISTLIB)/jetty-start-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/start.jar
