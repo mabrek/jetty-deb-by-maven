@@ -18,14 +18,6 @@ if [ ! -f $TAR ] ; then
    rm -rf $DIR
 fi
 
-# Download Linux Packaging Patch
-# TODO: Make sure that the patch generation goes into the release process as well
-# wget -O $PATCH http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-project/$VERSION/jetty-project-$VERSION-linux-packaging.patch
-# if [ -f debian/patches/linux-packaging.patch ] ; then
-#     rm -f debian/patches/linux-packaging.patch
-# fi
-# cp $PATCH debian/patches/linux-packaging.patch
-
 # Cleanup
 rm -f ../$TAG
 
