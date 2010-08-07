@@ -7,48 +7,42 @@ PACKAGE              := $(shell dpkg-parsechangelog | egrep '^Source:' | cut -f2
 VERSION              := $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f2 -d' ' | sed 's/-[0-9\.]*$$//')
 JAVA_HOME            := /usr/lib/jvm/java-6-openjdk
 DEB_INSTALL_CHANGELOGS_ALL := VERSION.txt
-JETTYDISTLIB         := target/distribution/lib
+JETTYDISTLIB         := jetty-distribution/target/distribution/lib
 
 binary-post-install/lib$(PACKAGE)-java::
-	mh_installpoms -plib$(PACKAGE)-java
 # Jetty Libs
-#	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-ajp jetty-ajp/pom.xml $(JETTYDISTLIB)/jetty-ajp-$(VERSION).jar /usr/share/jetty/lib/jetty-ajp.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-client jetty-client/pom.xml $(JETTYDISTLIB)/jetty-client-$(VERSION).jar /usr/share/jetty/lib/jetty-client.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-continuation jetty-continuation/pom.xml $(JETTYDISTLIB)/jetty-continuation-$(VERSION).jar /usr/share/jetty/lib/jetty-continuation.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-deploy jetty-deploy/pom.xml $(JETTYDISTLIB)/jetty-deploy-$(VERSION).jar /usr/share/jetty/lib/jetty-deploy.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-http jetty-http/pom.xml $(JETTYDISTLIB)/jetty-http-$(VERSION).jar /usr/share/jetty/lib/jetty-http.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-io jetty-io/pom.xml $(JETTYDISTLIB)/jetty-io-$(VERSION).jar /usr/share/jetty/lib/jetty-io.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-jmx jetty-jmx/pom.xml $(JETTYDISTLIB)/jetty-jmx-$(VERSION).jar /usr/share/jetty/lib/jetty-jmx.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-jndi jetty-jndi/pom.xml $(JETTYDISTLIB)/jetty-jndi-$(VERSION).jar /usr/share/jetty/lib/jetty-jndi.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-jsp jetty-jsp-2.1/pom.xml $(JETTYDISTLIB)/jetty-jsp-2.1-$(VERSION).jar /usr/share/jetty/lib/jsp/jetty-jsp-2.1.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-policy jetty-policy/pom.xml $(JETTYDISTLIB)/jetty-policy-$(VERSION).jar /usr/share/jetty/lib/jetty-policy.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-rewrite jetty-rewrite/pom.xml $(JETTYDISTLIB)/jetty-rewrite-$(VERSION).jar /usr/share/jetty/lib/jetty-rewrite.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-security jetty-security/pom.xml $(JETTYDISTLIB)/jetty-security-$(VERSION).jar /usr/share/jetty/lib/jetty-security.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-server jetty-server/pom.xml $(JETTYDISTLIB)/jetty-server-$(VERSION).jar /usr/share/jetty/lib/jetty-server.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-servlet jetty-servlet/pom.xml $(JETTYDISTLIB)/jetty-servlet-$(VERSION).jar /usr/share/jetty/lib/jetty-servlet.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-servlets jetty-servlets/pom.xml $(JETTYDISTLIB)/jetty-servlets-$(VERSION).jar /usr/share/jetty/lib/jetty-servlets.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-util jetty-util/pom.xml $(JETTYDISTLIB)/jetty-util-$(VERSION).jar /usr/share/jetty/lib/jetty-util.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-webapp jetty-webapp/pom.xml $(JETTYDISTLIB)/jetty-webapp-$(VERSION).jar /usr/share/jetty/lib/jetty-webapp.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-websocket jetty-websocket/pom.xml $(JETTYDISTLIB)/jetty-websocket-$(VERSION).jar /usr/share/jetty/lib/jetty-websocket.jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-xml jetty-xml/pom.xml $(JETTYDISTLIB)/jetty-xml-$(VERSION).jar /usr/share/jetty/lib/jetty-xml.jar
+	install $(JETTYDISTLIB)/jetty-client-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-client.jar
+	install $(JETTYDISTLIB)/jetty-continuation-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-continuation.jar
+	install $(JETTYDISTLIB)/jetty-deploy-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-deploy.jar
+	install $(JETTYDISTLIB)/jetty-http-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-http.jar
+	install $(JETTYDISTLIB)/jetty-io-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-io.jar
+	install $(JETTYDISTLIB)/jetty-jmx-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-jmx.jar
+	install $(JETTYDISTLIB)/jetty-jndi-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-jndi.jar
+	install $(JETTYDISTLIB)/jetty-jsp-2.1-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jsp/jetty-jsp-2.1.jar
+	install $(JETTYDISTLIB)/jetty-plus-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-plus.jar
+	install $(JETTYDISTLIB)/jetty-policy-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-policy.jar
+	install $(JETTYDISTLIB)/jetty-rewrite-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-rewrite.jar
+	install $(JETTYDISTLIB)/jetty-security-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-security.jar
+	install $(JETTYDISTLIB)/jetty-server-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-server.jar
+	install $(JETTYDISTLIB)/jetty-servlet-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-servlet.jar
+	install $(JETTYDISTLIB)/jetty-servlets-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-servlets.jar
+	install $(JETTYDISTLIB)/jetty-util-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-util.jar
+	install $(JETTYDISTLIB)/jetty-webapp-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-webapp.jar
+	install $(JETTYDISTLIB)/jetty-websocket-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-websocket.jar
+	install $(JETTYDISTLIB)/jetty-xml-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jetty-xml.jar
 # Jetty JNDI 3rd Party Jars
-	dh_install -plib$(PACKAGE)-java $(JETTYDISTLIB)/jndi/javax.activation_1.1.0.v201005080500.jar /usr/share/jetty/lib/jndi
-	dh_install -plib$(PACKAGE)-java $(JETTYDISTLIB)/jndi/javax.mail.glassfish_1.4.1.v201005082020.jar /usr/share/jetty/lib/jndi
+	install $(JETTYDISTLIB)/jndi/activation-1.1.jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jndi
+	install $(JETTYDISTLIB)/jndi/geronimo-jta_1.1_spec-1.1.1.jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jndi
+	install $(JETTYDISTLIB)/jndi/mail-1.4.1.jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jndi
 # Jetty JSP 3rd Party Jars
-	dh_install -plib$(PACKAGE)-java $(JETTYDISTLIB)/jsp/com.sun.el_1.0.0.v201004190952.jar /usr/share/jetty/lib/jsp
-	dh_install -plib$(PACKAGE)-java $(JETTYDISTLIB)/jsp/ecj-3.6.jar /usr/share/jetty/lib/jsp
-	dh_install -plib$(PACKAGE)-java $(JETTYDISTLIB)/jsp/javax.el_2.1.0.v201004190952.jar /usr/share/jetty/lib/jsp
-	dh_install -plib$(PACKAGE)-java $(JETTYDISTLIB)/jsp/javax.servlet.jsp_2.1.0.v201004190952.jar /usr/share/jetty/lib/jsp
-	dh_install -plib$(PACKAGE)-java $(JETTYDISTLIB)/jsp/org.apache.jasper.glassfish_2.1.0.v201007080150.jar /usr/share/jetty/lib/jsp
-	dh_install -plib$(PACKAGE)-java $(JETTYDISTLIB)/jsp/org.apache.taglibs.standard.glassfish_1.2.0.v201004190952.jar /usr/share/jetty/lib/jsp
+	install $(JETTYDISTLIB)/jsp/ecj-3.5.1.jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jsp
+	install $(JETTYDISTLIB)/jsp/jetty-jsp-2.1-7.1.6.v20100715.jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jsp
+	install $(JETTYDISTLIB)/jsp/jsp-2.1-glassfish-2.1.v20100127.jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jsp
+	install $(JETTYDISTLIB)/jsp/jsp-api-2.1-glassfish-2.1.v20100127.jar debian/lib$(PACKAGE)-java/usr/share/jetty/lib/jsp
 # Jetty Policy
-	dh_install -plib$(PACKAGE)-java $(JETTYDISTLIB)/policy/jetty.policy /usr/share/jetty/lib/policy
+	install $(JETTYDISTLIB)/policy/jetty.policy debian/lib$(PACKAGE)-java/usr/share/jetty/lib/policy
 # Jetty Start Jar
-	mh_installjar -plib$(PACKAGE)-java -l --usj-name=jetty-start jetty-start/pom.xml $(JETTYDISTLIB)/jetty-start-$(VERSION).jar /usr/share/jetty/start.jar
+	install $(JETTYDISTLIB)/jetty-start-$(VERSION).jar debian/lib$(PACKAGE)-java/usr/share/jetty/start.jar
 
 get-orig-source:
 	uscan --download-version $(VERSION) --force-download --rename
-
-# No documentation released yet.
-#binary-post-install/$(PACKAGE)-doc::
-
