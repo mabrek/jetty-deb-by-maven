@@ -1,0 +1,43 @@
+Source: jetty
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Philipp Meier <meier@fnogol.de>, Michael Koch <konqueror@gmx.de>, Thierry Carrez <thierry.carrez@ubuntu.com>
+Build-Depends: debhelper (>= 6), cdbs (>> 0.4.5.3), openjdk-6-jdk, ant, maven-repo-helper,
+ libservlet2.5-java, libslf4j-java, libgnumail-java,
+ libgnujaf-java, libcommons-daemon-java, quilt
+Standards-Version: 3.8.3
+Homepage: http://www.eclipse.org/jetty/
+
+Package: libjetty-java
+Architecture: all
+Depends: ${misc:Depends}, default-jre-headless | java5-runtime-headless, libservlet2.5-java, libslf4j-java,
+Suggests: jetty, libjetty-java-doc
+Description: Java servlet engine and webserver -- core libraries
+ Jetty is an Open Source HTTP Servlet Server written in 100% Java.
+ It is designed to be light weight, high performance, embeddable,
+ extensible and flexible, thus making it an ideal platform for serving
+ dynamic HTTP requests from any Java application.
+
+Package: libjetty-java-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: libjetty-java
+Description: Javadoc for the Jetty API
+ Jetty is an Open Source HTTP Servlet Server written in 100% Java.
+ It is designed to be light weight, high performance, embeddable,
+ extensible and flexible, thus making it an ideal platform for serving
+ dynamic HTTP requests from any Java application.
+ .
+ This package contains the Javadoc for libjetty-java.
+
+Package: jetty
+Architecture: all
+Depends: ${misc:Depends}, libjetty-java (>= ${source:Version}),
+ libjetty-java-doc (>= ${source:Version}), adduser
+Description: Java servlet engine and webserver
+ Jetty is an Open Source HTTP Servlet Server written in 100% Java.
+ It is designed to be light weight, high performance, embeddable,
+ extensible and flexible, thus making it an ideal platform for serving
+ dynamic HTTP requests from any Java application.

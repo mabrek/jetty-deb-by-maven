@@ -1,0 +1,7 @@
+etc/jetty
+etc/jetty/contexts
+usr/share/jetty
+usr/share/doc/jetty
+var/lib/jetty/webapps
+var/log/jetty
+var/cache/jetty

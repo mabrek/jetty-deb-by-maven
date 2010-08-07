@@ -1,0 +1,3 @@
+version=3
+http://dev.eclipse.org/svnroot/rt/org.eclipse.jetty/jetty/tags/ \
+  jetty-([0-9vRCM].*)/ debian debian/orig-tar.sh

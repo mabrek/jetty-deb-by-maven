@@ -1,0 +1,11 @@
+debian/start.config                   etc/jetty
+target/distribution/etc/*             etc/jetty
+target/distribution/contexts          etc/jetty
+target/distribution/resources         usr/share/jetty
+README.txt                            usr/share/doc/jetty
+VERSION.txt                           usr/share/doc/jetty
+LICENSE-CONTRIBUTOR/cla-*             usr/share/doc/jetty/LICENSES
+LICENSE-CONTRIBUTOR/ccla-*            usr/share/doc/jetty/LICENSES
+LICENSE-APACHE-*                      usr/share/doc/jetty/LICENSES
+LICENSE-ECLIPSE-*                     usr/share/doc/jetty/LICENSES
+NOTICE.txt                            usr/share/doc/jetty/LICENSES

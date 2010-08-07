@@ -1,0 +1,46 @@
+#!/bin/sh
+set -e
+
+#DEBHELPER#
+
+# Remove cached files
+rm -rf /var/cache/jetty/*
+
+case "$1" in
+    remove)
+        # Remove ROOT webapp if not modified
+        RWLOC="/var/lib/jetty/webapps/root"
+        RWFILES="$RWLOC/index.html $RWLOC/jetty_banner.gif"
+        if [ "`(cat $RWFILES | md5sum -) 2>/dev/null | cut -d ' ' -f 1`" \
+                            = "12471c4b3020defb7ebd30ef84c0f9dd" ] ; then
+            rm $RWFILES
+            rmdir --ignore-fail-on-non-empty \
+                /var/lib/jetty/webapps/root \
+                /var/lib/jetty/webapps \
+                /var/lib/jetty || true
+        fi
+        if [ -d "/var/cache/jetty" ] ; then
+            rm -rf /var/cache/jetty
+        fi
+    ;;
+
+    purge)
+        # Remove user/group and log files (don't remove everything under
+        # /var/lib/jetty because there might be user-installed webapps)
+        deluser jetty || true
+        rm -rf /var/log/jetty
+        if [ -d "/var/lib/jetty" ] ; then
+            rmdir --ignore-fail-on-non-empty /var/lib/jetty || true
+        fi
+        rmdir --ignore-fail-on-non-empty /etc/jetty/contexts /etc/jetty || true
+    ;;
+
+    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        # Nothing to do here
+    ;;
+
+    *)
+        echo "$0 called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac

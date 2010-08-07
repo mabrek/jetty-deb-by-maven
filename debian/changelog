@@ -1,0 +1,792 @@
+jetty (7.1.6.v20100715) stable; urgency=low
+  * 319519 Warn about duplicate configuration files
+  * 319655 Reset HEAD status 
+  * JETTY-1247 synchronize recylcing of SSL NIO buffers 
+  * JETTY-1248 fix parsing of bad multiparts
+  * JETTY-1249 Apply max idle time to all connectors
+  * JETTY-1251 Replace then close selector for JVM bugs
+
+ -- Jesse McConnell <jesse.mcconnell@gmail.com>  Thu, 15 July 2010 16:15:12 -0700
+
+jetty (7.1.5.v20100705) stable; urgency=low
+  * Update ecj to 3.6 Helios release drop
+  * 288194 Add blacklist/whitelist to ProxyServlet and ProxyHandler
+  * 296570 EOFException for HttpExchange when HttpClient.stop called.
+  * 311550 The WebAppProvider should allow setTempDirectory
+  * 316449 Websocket disconnect fix
+  * 316584 Exception on startup if temp path has spaces and extractWAR=false
+  * 316597 Removed null check and fixed name in Resource#hrefEncodeURI
+  * 316970 jetty.sh fails to find JETTY_HOME in standard directories
+  * 316973 jetty.sh claims java installation is invalid
+  * 316976 removed quotes of JAVA_OPTIONS in jetty.sh
+  * 317019 Date HTTP header not sent for HTTP/1.0 requests
+  * 317759 Allow roles and constraints to be added after init
+  * 317906 OPTIONS correctly handles TRACE
+  * 318308 Correct quoting of unicode control characters
+  * 318470 unboxing NPE protection in HttpConnection
+  * 318551 Optional uncheck Printwriter
+  * JETTY-1237 Save local/remote address to be available after close
+  * 317007 Unable to run Jetty OSGi when -Dosgi.compatibility.bootdelegation=false
+  * 316909 CNFE: org.xml.sax.SAXException on org.eclipse.jetty.osgi.boot start with jsp fragment
+  * 317231 Ability to configure jetty with a fragment bundle that contains etc/jetty.xml
+  * 319060 Support web-bundles that are not expanded (bundle is zipped)
+
+ -- Jesse McConnell <jesse.mcconnell@gmail.com>  Mon, 5 July 2010 16:15:12 -0700
+
+jetty (7.1.4.v20100610) stable; urgency=low
+  * 298551 SslSocketConnector does not need keystore stream
+  * 295715 AbstractSessionManager decoupled from Context
+  * 292326 Stop continuations if server is stopped.
+  * 292814 Make QoSFilter and DoSFilter JMX manageable
+  * 293222 Improve request log to handle/show asynchronous latency
+  * 294212 Can not customize session cookie path
+  * 301608 Deregister shutdown hooks
+  * 302350 org.eclipse.jetty.server.NCSARequestLog is missing JavaDoc
+  * 303661 jetty.sh failes if JETTY_HOME is not writeable
+  * 304100 Better document JMX setup in jetty-jmx.xml
+  * 305300 AsyncContext.start dispatches runnable
+  * 314299 Create test harness for JDBCLoginService
+  * 314581 Implement the Sec-Websocket handshake
+  * 315190 CrossOriginFilter avoid headers not understood by WebSocket
+  * 315687 included init script fails to test for JETTY_HOME as empty
+  * 315715 Improved Cookie version handling. Server.setMaxCookieVersion
+  * 315744 Fixed STOP.PORT and STOP.KEY in start.jar
+  * 315748 Removed --fromDaemon from start.jar (replaced with --daemon)
+  * 315925 Improved context xml configuration handling
+  * 315995 Incorrect package name in system classes list
+  * 316119 Fixed maxIdleTime for SocketEndPoint
+  * 316254 Implement @DeclareRoles
+  * 316334 Breaking change on org.eclipse.jetty.client.HttpExchange
+  * 316399 Debug output in MultiPartFilter
+  * 316413 Restarting webapp for packed war fails
+  * 316557 OSGi HttpService failure due to undeployed context handlers
+  * JETTY-547 Delay close after shutdown until request read
+  * JETTY-1231 Support context request log handler
+
+ -- Jesse McConnell <jesse.mcconnell@gmail.com>  Thu, 10 June 2010 16:15:12 -0700
+
+jetty (7.1.3.v20100526) stable; urgency=low
+
+  * 296567 HttpClient RedirectListener handles new HttpDestination
+  * 297598 JDBCLoginService uses hardcoded credential class
+  * 302344 Make the list of available contexts if root context is not configured optional
+  * 304803 Remove TypeUtil Integer and Long caches
+  * 305898 Websocket handles query string in URI
+  * 306226 HttpClient should allow changing the keystore and truststore type
+  * 307457 Exchanges are left unhandled when connection is lost
+  * 308850 Update test suite to JUnit4 - Module jetty-annotations
+  * 308853 Update test suite to JUnit4 - Module jetty-deploy
+  * 308854 Update test suite to JUnit4 - Module jetty-http
+  * 308855 Update test suite to JUnit4 - Module jetty-io
+  * 308856 Update test suite to JUnit4 - Module jetty-jmx
+  * 308857 Update test suite to JUnit4 - Module jetty-jndi
+  * 308858 Update test suite to JUnit4 - Module jetty-plus
+  * 308859 Update test suite to JUnit4 - Module jetty-policy
+  * 308860 Update test suite to JUnit4 - Module jetty-rewrite
+  * 308863 Update test suite to JUnit4 - Module jetty-servlet
+  * 308866 Update test suite to JUnit4 - Module jetty-util
+  * 312948 Recycle SSL crypto buffers
+  * 313196 randomly allocate ports for session test.
+  * 313205 Unable to run test-jdbc-sessions tests
+  * 313278 Implement octet ranges in IPAccessHandler
+  * 313336 secure websockets
+  * 314009 jetty.xml configuration file on command line
+  * 314009 updated README.txt
+  * 314177 JSTL support is broken
+  * 314459 support maven3 for builds
+  * Update links to jetty website and wiki on test webapp
+
+ -- Joakim Erdfelt <joakim@intalio.com>  Wed, 5 May 2010 16:15:12 -0700
+
+jetty (7.1.0.v20100505) stable; urgency=low
+
+  * 286889 Allow System and Server classes to be set on Server instance and
+           when applied to all webapps
+  * 291448 SessionManager has isCheckingRemoteSessionIdEncoding
+  * 294563 Websocket client connection
+  * 296650 JETTY-1198 reset idle timeout on request body chunks
+  * 297104 HTTP CONNECT does not work correct with SSL destinations
+  * 297104 Improve handling of CONNECT method
+  * 306349 ProxyServlet does not work unless deployed at /
+  * 306353 fixed cross context dispatch to root context.
+  * 306782 Close connection when expected 100 continues is not sent
+  * 307294 Add AbstractLifeCycle.AbstractLifeCycleListener implementation
+  * 307847 Fixed combining mime type parameters
+  * 307898 Handle large/async websocket messages
+  * 308009 ObjectMBean incorrectly casts getTargetException() to Exception
+  * 308420 convert jetty-plus.xml to use DeploymentManager
+  * 308848 Update test suite to JUnit4 - Module jetty-ajp
+  * 308861 Update test suite to JUnit4 - Module jetty-security
+  * 308864 Update test suite to JUnit4 - Module jetty-servlets
+  * 308865 Update test suite to JUnit4 - Module jetty-start
+  * 308868 Update test suite to JUnit4 - Module jetty-websocket
+  * 308869 Update test suite to JUnit4 - Module jetty-xml
+  * 308925 Protect the test webapp from remote access
+  * 309153 Hide extracted WEB-INF/lib when running a non-extracted war
+  * 309369 Added WebSocketLoadTest
+  * 309466 Removed synchronization from StdErrLog
+  * 309686 Fixed response buffers usage
+  * 309765 Added JSP module
+  * 310051 _configurationClasses now defaults to null in WebAppContext
+  * 310094 Improved start.jar options handling and configs
+  * 310094 Improved start.jar usage and config files
+  * 310382 NPE protection when WAR is not a file
+  * 310431 Default ErrorHandler as server Bean
+  * 310467 Allow SocketConnector to create generic Connection objects
+  * 310562 SslSocketConnector fails to start if excludeCipherSuites is set
+  * 310603 Make Logger interface consistent
+  * 310605 Make a clean room implementation of the JSP logger bridge
+  * 310634 Get the localport when opening a server socket.
+  * 310703 Update test suite to JUnit4 - Module tests/test-integration
+  * 310918 Synchronize content exchange
+  * 311154 Added deprecated StringBuffer API for backwards compatibility
+  * 311154 Use Appendable in preference to StringBuilder/StringBuffer in APIs
+  * 311362 Optional org.eclipse.jetty.util.log.stderr.SOURCE
+  * 311554 Protect shutdown thread from Server#doStop
+  * JETTY-1030 Improve jetty.sh script
+  * JETTY-1142 Replace Set-Cookies with same name
+  * JETTY-1200 SSL NIO Endpoint wraps non NIO buffers
+  * JETTY-1202 Use platform default algorithm for SecureRandom
+  * JETTY-1212 handle long content lengths
+  * JETTY-1214 avoid ISE when scavenging invalid session
+  * JETTY-903 Stop both caches
+  * Add AnnotationConfiguration to jetty-plus.xml
+  * Fix jetty-plus.xml reference to addLifeCycle
+
+ -- Joakim Erdfelt <joakim@intalio.com>  Wed, 5 May 2010 16:15:12 -0700
+
+jetty (7.0.2.v20100331) stable; urgency=low
+
+  * 274251 DefaultServlet supports exact match mode.
+  * 288401 HttpExchange.cancel() Method Unimplemented
+  * 289027 deobfuscate HttpClient SSL passwords
+  * 289265 Test harness for async input
+  * 289959 Improved ContextDeployer configuration
+  * 289960 start.jar assumes command line args are configs
+  * 290765 Reset input for HttpExchange retry.
+  * 291019 Fix default DEBUG option; "-D.DEBUG=true" now works
+  * 291340 Race condition in onException() notifications
+  * 291543 make bin/*.sh scripts executable in distribution
+  * 291589 Update jetty-rewrite demo
+  * 292546 Proactively enforce HttpClient idle timeout
+  * 292642 Fix errors in embedded Jetty examples
+  * 292799 WebAppDeployer - start a started context?
+  * 292800 ContextDeployer - recursive setting is undone by FilenameFilter
+  * 292825 Continuations ISE rather than ignore bad transitions
+  * 293222 Improved StatisticsHandler for async
+  * 293506 Unable to use jconsole with Jetty when running with security manager
+  * 294799 when configuring a webapp, don't look for WEB-INF/jetty6-web.xml
+  * 296569 removeLifeCycleListener() has no effect
+  * 296765 JMX Connector Server and ShutdownThread
+  * 297421 Hide server/system classes from WebAppClassLoader.getResources
+  * 297552 Don't call Continuation timeouts from acceptor tick
+  * 297783 Handle HEAD reponses in HttpClient
+  * 298144 Unit test for jetty-client connecting to a server that uses
+           Basic Auth
+  * 298145 Reorganized test harness to separate the HTTP PUT and HTTP GET test
+           URLs
+  * 298234 Unit test for jetty-client handling different HTTP error codes
+  * 298236 Additional unit tests for jetty-client
+  * 298667 DeploymentManager uses ContextProvider and WebAppProvider
+  * 299455 Enum support in JSONPojoConvertor
+  * 300178 HttpClients opens too many connections that are immediately closed
+  * 300733 Jars from lib/ext are not visible for my web application
+  * 300933 AbstractConnector uses concurrent objects for stats
+  * 301089 Improve statistics available in StatisticsHandler and
+           AbstractConnector
+  * 302018 Improve statistics available in AbstractSessionHandler
+  * 302198 Rename HttpClient authorization classes to Authentication
+  * 302244 invalid configuration boolean conversion in FormAuthenticator
+  * 302246 redirect loop using form authenticator
+  * 302556 CrossOriginFilter does not work correctly when
+           Access-Control-Request-Headers header is not present
+  * 302669 WebInfConfiguration.unpack() unpacks WEB-INF/* from a
+           ResourceCollection, breaking JSP reloading with ResourceCollections
+  * 303526 Added include cyphers
+  * 304307 Handle ;jsessionid in FROM Auth
+  * 304532 Skip some tests on IBM JVMs until resolved
+  * 304658 Inconsistent Expires date format in Set-Cookie headers with maxAge=0
+  * 304698 org.eclipse.jetty.http.HttpFields$DateGenerator.formatCookieDate()
+           uses wrong (?) date format
+  * 304781 Reset HttpExchange timeout on slow request content.
+  * 304801 SSL connections FULL fix
+  * 305997 Coalesce buffers in ChannelEndPoint.flush()
+  * 306028 Enable TCP_NODELAY by default in client connectors
+  * 306330 Flush filter chain cache after Invoker servlet
+  * 306331 Session manager is kept after call to doScope
+  * 306782 httpbis interpretation of 100 continues. Body never skipped
+  * 306783 NPE in StdErrLog when Throwable is null
+  * 306840 Suppress content-length in requests with no content
+  * 306880 Support for UPGRADE in HttpClient
+  * 306884 Suspend with timeout <=0 never expires
+  * 307589 updated servlet 3.0 continuations for final API
+  * JETTY-776 Make new session-tests module to concentrate all reusable
+              session clustering test code
+  * JETTY-910 Allow request listeners to access session
+  * JETTY-983 Range handling cleanup
+  * JETTY-1133 Handle multiple URL ; parameters
+  * JETTY-1151 JETTY-1098 allow UTF-8 with 0 carry bits
+  * JETTY-1153 System property for UrlEncoded charset
+  * JETTY-1155 HttpConnection.close notifies HttpExchange
+  * JETTY-1156 SSL blocking close with JVM Bug busy key fix
+  * JETTY-1157 Don't hold array passed in write(byte[])
+  * JETTY-1163 AJP13 forces 8859-1 encoding
+  * JETTY-1174 Close rather than finish Gzipstreams to avoid JVM leak
+  * JETTY-1177 Allow error handler to set cacheControl
+  * JETTY-1179 Persistant session tables created on MySQL use wrong datatype
+  * JETTY-1184 shrink thread pool even with frequent small jobs
+  * JETTY-1192 Fixed Digested POST
+  * JETTY-1199 FindBugs cleanups
+  * Added IPAccessHandler
+  * Allow Configuration array to be set on Server instance for all web apps
+  * COMETD-46 reset ContentExchange response content on resend
+  * Ensure webapps with no WEB-INF don't scan WEB-INF/lib
+  * JSON parses NaN as null
+  * Take excess logging statements out of startup
+  * Updated Servlet3Continuation to final 3.0.20100224
+
+ -- Joakim Erdfelt <joakim@intalio.com>  Thu, 28 Jan 2010 11:21:22 -0700
+
+jetty (7.0.1.v20091125) unstable; urgency=low
+
+  * 271535 Adding integration tests, and enabling RFC2616 tests
+  * 273767 Update to use geronimo annotations spec 1.1.1
+  * 274251 Allow dispatch to welcome files that are servlets (configurable)
+  * 274251 DefaultServlet supports exact match mode.
+  * 275396 Added Authentication.Wrapped to allow JSAPI wrapping, Added 
+           ScopedHandler to set servlet scope before security handler
+  * 276545 Quoted cookie paths
+  * 277403 Cleanup system property usage.
+  * 277798 Denial of Service Filter
+  * 279725 Support 100 and 102 expectations
+  * 279820 Fixed HotSwapHandler
+  * 280707 client.HttpConnection does not catch and handle non-IOExceptions
+  * 280723 Add non blocking statistics handler
+  * 280843 Buffer pool uses isHeader
+  * 281059 NPE in QTP with debug on
+  * 281287 Handle date headers before 1 Jan 1970
+  * 281470 Handle the case where request.PathInfo() should be "/*"
+  * 282447 concurrent destinations in HttpClient
+  * 282543 HttpClient SSL buffer size fix
+  * 282807 283049 282543 Improved handling of timeouts and complete. More debug
+           Better handling of 100 continues if response committed.
+  * 283172 fix Windows build, broken on directory creation with the
+           DefaultServlet
+  * 283344 Startup on windows is broken
+  * 283357 org.eclipse.jetty.server.HttpConnectionTest exceptions
+  * 283375 additional error-checking on SSL connector passwords to prevent NPE
+  * 283513 Check endp.isOpen when blocking read
+  * 283818 fixed merge of forward parameters
+  * 283844 Webapp / TLD errors are not clear
+  * 284475 update jetty.sh for new OPTIONS syntax
+  * 284510 Enhance jetty-start for diagnosis and unit testing
+  * 284981 Implement a cross-origin filter
+  * 285006 Fixed NPE in AbstractConnector during shutdown
+  * 285697 extract parameters if dispatch has query
+  * 285891 SessionAuthentication is serializable
+  * 286185 Implement ability for JSON implementation to automatically
+           register convertors
+  * 286535 ContentExchange status code
+  * 286911 Clean out cache when recycling HTTP fields
+  * 287496 Use start.ini always and added --exec
+  * 287632 FilterContinuations for blocking jetty6
+  * 288055 jetty-client fails to resolve failed resolution attempts correctly
+  * 288153 jetty-client resend doesn't reset exchange
+  * 288182 PUT request fails during retry
+  * 288401 HttpExchange.cancel() Method Unimplemented
+  * 288466 LocalConnector is not thread safe
+  * 288514 AbstractConnector does not handle InterruptedExceptions on shutdown
+  * 288772 Failure to connect does not set status to EXCEPTED
+  * 289027 deobfuscate HttpClient SSL passwords
+  * 289146 formalize reload policy functionality
+  * 289156 jetty-client: no longer throw runtime exception for bad authn
+           details
+  * 289221 HttpExchange does not timeout when using blocking connector
+  * 289265 Test harness for async input
+  * 289285 org.eclipse.jetty.continuation 7.0.0.RC5 imports the
+           org.mortbay.util.ajax package
+  * 289686 HttpExchange.setStatus() has too coarse synchronization
+  * 289958 StatisticsServlet incorrectly adds StatisticsHandler
+  * 289959 Improved ContextDeployer configuration
+  * 289960 start.jar assumes command line args are configs
+  * 290081 Eager consume LF after CR
+  * 290761 HttpExchange isDone handles intercepted events.
+  * 291019 Fix default DEBUG option; "-D.DEBUG=true" now works
+  * 291340 Race condition in onException() notifications
+  * 291543 make bin/*.sh scripts executable in distribution
+  * 291589 Update jetty-rewrite demo
+  * 292546 Proactively enforce HttpClient idle timeout
+  * 292642 Fix errors in embedded Jetty examples
+  * 292825 Continuations ISE rather than ignore bad transitions
+  * 293222 Improved StatisticsHandler for async
+  * 293506 Unable to use jconsole with Jetty when running with security manager
+  * 293557 Add "jad" mime mapping
+  * 294154 Patched jetty-osgi
+  * 294224 HttpClient timeout setting has no effect when connecting to host
+  * 294345 Support for HTTP/301 & HTTP/302 response codes
+  * 294563 Initial websocket implementation
+  * 295421 Cannot reset() a newly created HttpExchange: 
+           IllegalStateException 0 => 0
+  * 295562 CrossOriginFilter does not work with default values in Chrome and
+           Safari
+  * Added ContinuationThrowable
+  * Added DebugHandler
+  * Added discoverable start options
+  * Added getSubscriptions to cometd client
+  * Added JavaUtilLog for Jetty logging to java.util.logging framework
+  * added WebAppContext.setConfigurationDiscovered for servlet 3.0 features
+  * backport jetty-8 annotation parsing to jetty-7
+  * Clarified cometd interval timeout and allow per client intervals
+  * COMETD-7 max latency config for lazy messages
+  * COMETD-34 Support Baeyux MBean
+  * Copy VERSION.txt to distro
+  * CQ-3581 jetty OSGi contribution
+  * CVE-2009-3555 Prevent SSL renegotiate for SSL vulnerability
+  * Disassociate method on IdentityService
+  * Fix DefaultServletTest for windows
+  * Fixed client abort asocciation
+  * Fixed race with expired async listeners
+  * Fixed XSS issue in CookieDump demo servlet.
+  * Improved deferred authentication handling
+  * Improved handling of overlays and resourceCollections
+  * Improved start.jar usage text for properties
+  * Include tmp directory sweeper in build
+  * JETTY-719 Document state machine of jetty http client
+  * JETTY-780 CNFE during startup of webapp with spring-context >= 2.5.1
+  * JETTY-799 shell script for jetty on cygwin
+  * JETTY-838 Don't log and throw
+  * JETTY-863 Non blocking stats handler
+  * JETTY-874 Better error on full header.
+  * JETTY-933 State == HEADER in client
+  * JETTY-936 274251 Improved servlet matching and optimized'
+  * JETTY-936 Improved servlet matching and optimized
+  * JETTY-937 More Sun JVM bug work arounds. Insert pause if all else fails
+  * JETTY-941 Linux chkconfig hint
+  * JETTY-959 CGI servlet doesn't kill the CGI in case the client disconnects
+  * JETTY-960 Support for ldaps
+  * JETTY-967 create standalone build for PKCS12Import at codehaus
+  * JETTY-970 BayeuxLoadGenerator latency handling
+  * JETTY-980 Fixed ResourceHandler ? handling, and bad URI creation in
+              listings
+  * JETTY-983 Send content-length with multipart ranges
+  * JETTY-996 Make start-stop-daemon optional
+  * JETTY-1003 java.lang.IllegalArgumentException: timeout can't be negative
+  * JETTY-1004 CERT VU#402580 Canonical path handling includes ? in path
+               segment
+  * JETTY-1011 Grizzly uses queued thread pool
+  * JETTY-1013 MySql Error with JDBCUserRealm
+  * JETTY-1014 Enable start-stop-daemon by default on jetty.sh
+               (START_STOP_DAEMON=1)
+  * JETTY-1015 Reduce BayeuxClient and HttpClient lock contention
+  * JETTY-1020 ZipException in org.mortbay.jetty.webapp.TagLibConfiguration
+               prevents all contexts from being loaded
+  * JETTY-1028 jetty:run plugin should check for the web.xml from the
+               overlays if not found in src/main/webapp/WEB-INF/
+  * JETTY-1029 Handle quoted cookie paths
+  * JETTY-1031 Handle large pipeline
+  * JETTY-1033 jetty-plus compiled with jdk1.5
+  * JETTY-1034 Cookie parsing
+  * JETTY-1037 reimplemented channel doRemove
+  * JETTY-1038 ChannelId.isParentOf returns the wrong result
+  * JETTY-1040 jetty.client.HttpConnection does not handle non IOExceptions
+  * JETTY-1042 Prevent cookie leak between shared connection
+  * JETTY-1044 add commons-daemon support as contrib/start-daemon module
+  * JETTY-1045 Handle the case where request.PathInfo() should be "/*"
+  * JETTY-1046 maven-jetty-jspc-plugin keepSources takes affect only in
+               packageRoot
+  * JETTY-1047 Cometd client can grow cookie headers
+  * JETTY-1048 Default servlet can handle partially filtered large static
+               content
+  * JETTY-1049 Improved transparent proxy usability
+  * JETTY-1054 Avoid double deploys
+  * JETTY-1055 Cookie quoting
+  * JETTY-1056 update jetty-ant module for Jetty 7 at codehaus trunk
+  * JETTY-1057 Error page stack trace XSS
+  * JETTY-1057 XSS error page
+  * JETTY-1058 Handle trailing / with aliases on
+  * JETTY-1061 Catch exceptions from cometd listeners
+  * JETTY-1062 Don't filter cometd message without data
+  * JETTY-1065 Add RedirectRegexRule to provide match/replace/group redirect
+               support
+  * JETTY-1066 Send 400 error for request URI parse exceptions
+  * JETTY-1068 Avoid busy flush of async SSL
+  * JETTY-1069 Adjust Bayeux Java client backoff algorithm
+  * JETTY-1070 Java Bayeux Client not sending /meta/disconnect on stop
+  * JETTY-1072 maven plugin handles context path not as documented
+  * JETTY-1074 JMX thread manipulation
+  * JETTY-1077 HashSSORealm shares Principals between UserRealms
+  * JETTY-1078 Automatic JSON Pojo Conversion
+  * JETTY-1079 ResourceCollection.toString
+  * JETTY-1079 ResourceCollection.toString() can throw IllegalStateException
+  * JETTY-1080 Ignore files that would be extracted outside the destination
+               directory when unpacking WARs
+  * JETTY-1080 modify previous fix to work on windows
+  * JETTY-1081 Handle null content type in GzipFilter
+  * JETTY-1084 Disable GzipFilter for HEAD requests
+  * JETTY-1084 HEAD command not setting content-type in response under
+               certain circumstances
+  * JETTY-1085 Allow url sessionID if cookie invalid
+  * JETTY-1086 Added UncheckedPrintWriter to avoid ignored EOFs
+  * JETTY-1086 Use UncheckedPrintWriter & cleaned up HttpStatus.Code usage
+  * JETTY-1087 Chunked SSL non blocking input
+  * JETTY-1090 resolve inifinte loop condition for webdav listener
+  * JETTY-1090 resolve potential infinite loop with webdav listener
+  * JETTY-1092 MultiPartFilter can be pushed into infinite loop
+  * JETTY-1093 Request.toString throws exception when size exceeds 4k
+  * JETTY-1098 Default form encoding is UTF8
+  * JETTY-1098 Upgrade jsp to SJSAS-9_1_1-B60F-07_Jan_2009
+  * JETTY-1099 Improve cookie handling in BayeuxClient
+  * JETTY-1100 extend setuid feature to allow setting max open file descriptors
+  * JETTY-1101 Updated servlet3 continuation constructor
+  * JETTY-1102 Wrong usage of deliver() in private chat messages
+  * JETTY-1105 Custom error pages aren't working
+  * JETTY-1108 SSL EOF detection
+  * JETTY-1109 Improper handling of cookies in Terracotta tests
+  * JETTY-1112 Response fails if header exceeds buffer size
+  * JETTY-1113 IllegalStateException when adding servlet filters
+               programmatically
+  * JETTY-1114 unsynchronised WebAppClassloader.getResource(String)
+  * JETTY-1121 Merge Multipart query parameters
+  * JETTY-1122 Handle multi-byte utf that causes buffer overflow
+  * JETTY-1125 TransparentProxy incorrectly configured for test webapp
+  * JETTY-1129 Filter control characters out of StdErrLog
+  * JETTY-1135 Handle connection closed before accepted during JVM bug work
+               around
+  * JETTY-1144 fixed multi-byte character overflow
+  * JETTY-1148 Reset partially read request reader.
+  * Made unSubscribeAll public on cometd client
+  * Moved centralized logging and verifier back to sandbox
+  * Numerous cleanups from static code analysis
+  * Portable continuations for jetty6 and servlet3
+  * Promoted Jetty Centralized Logging from Sandbox
+  * Promoted Jetty WebApp Verifier from Sandbox
+  * Refactored AbstractBuffers to HttpBuffers for performance
+  * Refactored configuration mechanism
+  * Refactored continuations to only support response wrapping
+  * Refactored continuation test harnessess
+  * Removed clearing of queue in unSubscribeAll for cometd client
+  * Remove printlns from jetty-plus
+  * Streamline jetty-jboss build, update sar to QueuedThreadPool
+  * Tweak DefaultServletTest under windows
+  * Update Jetty implementation of com.sun.net.httpserver.*
+  * Update Main.main method to call setWar
+  * Update test-jndi and test-annotation examples for atomikos 3.5.5
+
+ -- Joakim Erdfelt <joakim@intalio.com>  Thu, 28 Jan 2010 11:21:22 -0700
+
+jetty6 (6.1.18-1) unstable; urgency=low
+
+  * Initial release for jetty6.
+  * Fixed jetty.links. Now delegates install of start.jar to libjetty6-java.
+
+ -- David Yu <david.yu.ftw@gmail.com>  Thu, 21 May 2009 18:10:35 +0800
+
+jetty (5.1.14-1) unstable; urgency=low
+
+  * New upstream release.
+    - Removed debian/patches/cve-2007-6969.patch. Applied upstream.
+  * Added recognition of installed libcommons-el-java to debian/start.config.
+    Closes: #352093.
+  * Fixed short and long service description in debian/jetty.init.
+    Closes: #446788.
+  * Removed libapache2-mod-webapp from Suggests.
+  * Added watch file.
+
+ -- Michael Koch <konqueror@gmx.de>  Wed, 24 Oct 2007 14:14:45 +0200
+
+jetty (5.1.10-4) unstable; urgency=low
+
+  * Added patch to fix CVE-2006-6969. Thanks to Greg Wilkins for the patch.
+    Closes: #445283.
+  * Updated debian/patches/jdk-1.2-src-encoding.patch to make it work with
+    current ecj.
+
+ -- Michael Koch <konqueror@gmx.de>  Fri, 05 Oct 2007 07:34:55 +0200
+
+jetty (5.1.10-3) unstable; urgency=low
+
+  * Fix debian/jetty.init to permit removal without purge and offer a new
+    NO_START option in /etc/default/jetty. Closes: #356067.
+    Thanks to Loic Minier for the patch.
+  * Added additional paths to JDK_DIRS in debian/jetty.init.
+    Closes: #405851.
+  * (Build-)Depends on java-gcj-compat.
+  * Moved debhelper from Build-Depends-Indep to Build-Depends.
+  * Removed Build-Depends on libtomcat5-java and replace Depends on
+    libtomcat5-java by libtomcat5.5-java.
+  * Added LSB section in debian/jetty.init.
+  * Removed extra license file from /usr/share/doc/jetty.
+  * Added myself to Uploaders.
+
+ -- Michael Koch <konqueror@gmx.de>  Tue, 24 Jul 2007 20:40:27 +0200
+
+jetty (5.1.10-2) unstable; urgency=low
+
+  * Fix in init script for new version of su (closes #367491).
+  * Create logfile if not existing. Aknolwedge NMU (closes #356066).
+
+ -- Philipp Meier <meier@fnogol.de>  Tue, 30 May 2006 10:46:21 +0200
+
+jetty (5.1.10-1) unstable; urgency=low
+
+  * New upstream release
+  * Sercurity fixes for windows
+  * Fixed path aliasing with // on windows.
+  * Fix for AJP13 with multiple headers
+  * Fix for AJP13 with encoded path
+  * Remove null dispatch attributes from getAttributeNames
+  * Put POST content default back to iso_8859_1. GET is UTF-8
+    still
+
+ -- Philipp Meier <meier@fnogol.de>  Tue, 30 May 2006 10:40:18 +0200
+
+jetty (5.1.8-3) unstable; urgency=low
+
+  * Enhance dependencies. 
+
+ -- Philipp Meier <meier@fnogol.de>  Fri, 16 Dec 2005 10:53:48 +0100
+
+jetty (5.1.8-2) unstable; urgency=low
+
+  * Add dependeny on apache2-util for log rotation. Closes: #343177.
+
+ -- Philipp Meier <meier@fnogol.de>  Tue, 13 Dec 2005 14:28:09 +0100
+
+jetty (5.1.8-1) unstable; urgency=low
+
+  * New upstream release
+
+  From 5.1.8:
+
+  * Fixed space in URL issued created in 5.1.6
+
+  From 5.1.7:
+
+  * improved server stats
+  * char encoding for MultiPartRequest
+  * fixed merging of POST params in dispatch query string.
+  * protect from NPE in dispatcher getValues
+  * Updated to 2.6.2 xerces
+  * JSP file servlet mappings copy JspServlet init params.
+  * Prefix servlet context logs with org.mortbay.jetty.context
+  * better support for URI character encodings
+  * use commons logging jar instead of api jar.
+
+ -- Philipp Meier <meier@fnogol.de>  Wed,  7 Dec 2005 11:06:10 +0100
+
+jetty (5.1.6-1) unstable; urgency=high
+
+  * New upstream release
+  * Fixed JSP visibility security issue in upstream.
+  * Fix location of jasper since upgrade to tomcat5. Closes: #333010.
+
+ -- Philipp Meier <meier@fnogol.de>  Wed, 30 Nov 2005 15:20:47 +0100
+
+jetty (5.1.5rc1-5) unstable; urgency=low
+
+  Patch from Oyvind Harboe <oyvind.harboe@zylin.com>:
+
+  * increased default amount of memory available to 256Mbyte.
+    the advantage of having more heap available is that more
+    applications will be able to run without modification to
+    the standard Jetty configuration.
+  * added -Djava.library.path=/usr/lib to VM arguments. This is
+    requried to make e.g. the librxtx-java package work.
+  * Closes: #32960.
+
+ -- Philipp Meier <meier@fnogol.de>  Thu, 22 Sep 2005 16:13:16 +0200
+
+jetty (5.1.5rc1-4) unstable; urgency=low
+
+  Patch from Oyvind Harboe <oyvind.harboe@zylin.com>:
+
+  * Fixed rc script /etc/init.d/jetty. "stop" could leave dangling
+    /var/run/jetty.pid. Fixed this by adding "--oknodo" to 
+    "start-stop-daemon --stop" command. 
+  * Removed trailing "/" from LOGDIR which caused
+    /var/log/out.log not to be created.
+  * /etc/init.d/jetty start will now deal more gracefully with a 
+    dangling /var/run/jetty.pid. A dangling jetty.pid is detected
+    and ignored.
+  * Closes: #326176.
+
+ -- Philipp Meier <meier@fnogol.de>  Fri,  2 Sep 2005 13:40:59 +0200
+
+jetty (5.1.5rc1-3) unstable; urgency=low
+
+  * Removed -v from ant opts during build.
+  * Remove pid file on stop. Closes: #325667
+  * Fix location of ant-1.6.jar in start.config. Closes: #324472.
+
+ -- Philipp Meier <meier@fnogol.de>  Tue, 30 Aug 2005 13:37:15 +0200
+
+jetty (5.1.5rc1-2) unstable; urgency=low
+
+  * Builds with kaffe.
+  * Adds patch to exclude Sun JSSE if not available.
+
+ -- Philipp Meier <meier@fnogol.de>  Sat, 27 Aug 2005 14:21:12 +0200
+
+jetty (5.1.5rc1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Meier <meier@fnogol.de>  Fri, 26 Aug 2005 12:53:50 +0200
+
+jetty (5.1.4-1) unstable; urgency=low
+
+  * New upstream release
+  * Added myself to Uploaders in control.
+  * Standards-Version bumbed to 3.6.2
+  * Removed debian/watch which will not work with sourceforge
+  * Manage changes to upstream with cdbs simple-patchsys
+  * Fixed rc script /etc/init.d/jetty
+  * Adjusted new location of servlet.jar. Closes: #280139.
+
+ -- Philipp Meier <meier@fnogol.de>  Fri, 12 Aug 2005 18:14:28 +0200
+
+jetty (5.0.0-3) unstable; urgency=low
+
+  * Package is now maintained by pkg-java. Maintainer was updated.
+  * Disable validation of xml files in start.config by default.
+    Closes: #298731.
+  * Add /usr/lib/j2sdk1.5-sun to JAVA_HOME_DIRS in debian/rules
+
+ -- Philipp Meier <meier@fnogol.de>  Thu, 30 Jun 2005 14:32:31 +0200
+
+jetty (5.0.0-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Transition to liblog4j1.2-java.  Closes: #306761.
+
+ -- Matej Vela <vela@debian.org>  Mon,  2 May 2005 12:12:12 +0200
+
+jetty (5.0.0-2) unstable; urgency=low
+
+  * Shipping working default configuration in /etc/jetty/jetty.xml.
+    Closes: #278134
+
+ -- Philipp Meier <meier@fnogol.de>  Mon, 25 Oct 2004 11:52:25 +0200
+
+jetty (5.0.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Meier <meier@fnogol.de>  Thu, 16 Sep 2004 00:40:41 +0200
+
+jetty (4.2.22-2) unstable; urgency=low
+
+  * New upstream release
+  * Changed mantainer email
+
+ -- Philipp Meier <meier@fnogol.de>  Wed, 25 Aug 2004 18:14:56 +0200
+
+jetty (4.2.21-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Meier <meier@meisterbohne.de>  Mon, 23 Aug 2004 15:23:25 +0200
+
+jetty (4.2.19-1) unstable; urgency=high
+
+  * New upstream release.
+  * Fixed DOS attack problem
+
+ -- Philipp Meier <meier@meisterbohne.de>  Fri, 19 Mar 2004 17:55:45 +0100
+
+jetty (4.2.18-1) unstable; urgency=low
+
+  * New upstream release.
+  * Package description of jetty-extra lists the 
+    extensions provided. Closes: #232824
+
+ -- Philipp Meier <meier@meisterbohne.de>  Mon,  1 Mar 2004 13:54:01 +0100
+
+jetty (4.2.15-1) unstable; urgency=low
+
+  * Adds missing javadoc to /usr/share/doc/
+  * Removes invalid libxdoclet-java from Build-Depends.
+  * Fixed clean target in upstreams extra build file. Building
+    jetty twice from the debianized source should work now.
+
+ -- Philipp Meier <meier@meisterbohne.de>  Thu, 15 Jan 2004 14:00:13 +0100
+
+jetty (4.2.15) unstable; urgency=low
+
+  * New upstream release
+  * New additional package jetty-extra.
+  * Updated standards version from 3.5.10 to 3.6.0
+  * Build target directory are no longer in debian because
+    the customization of the build process does not really pay off.
+
+ -- Philipp Meier <meier@meisterbohne.de>  Wed, 14 Jan 2004 14:00:01 +0100
+
+jetty (4.2.12-2) unstable; urgency=low
+
+  * Fixes start.config to make jetty run with kaffe
+  * Updated standards version from 3.5.8 to 3.5.10
+
+ -- Philipp Meier <meier@meisterbohne.de>  Fri, 29 Aug 2003 14:43:40 +0200
+
+jetty (4.2.12-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philipp Meier <meier@meisterbohne.de>  Tue, 12 Aug 2003 14:07:56 +0200
+
+jetty (4.2.11-7) unstable; urgency=low
+
+  * Adds alternative dependency on j2sdk1.4
+  * Fixes typos in debian/TODO
+  * Adds ant to classpath because jasper needs it. 
+
+ -- Philipp Meier <meier@meisterbohne.de>  Thu,  7 Aug 2003 20:34:19 +0200
+
+jetty (4.2.11-6) unstable; urgency=low
+
+  * Removes DH_VERBOSE from debian/rules
+  * /etc/jetty will be removed on purge
+  * Add build-dependency on j2sdk1.4
+
+ -- Philipp Meier <meier@meisterbohne.de>  Wed, 23 Jul 2003 15:38:05 +0200
+
+jetty (4.2.11-5) unstable; urgency=low
+
+  * Fix for /etc/default/jetty which was misplaced
+  * Fixes messed-up corrections for javadoc tags. Introduced before.
+
+ -- Philipp Meier <meier@meisterbohne.de>  Wed, 23 Jul 2003 01:11:42 +0200
+
+jetty (4.2.11-4) unstable; urgency=low
+
+  * Jetty depends on j2re1.4 until build process of jetty 
+    with java < 1.4 works.
+  * Fixes in build process 
+
+ -- Philipp Meier <meier@meisterbohne.de>  Thu, 17 Jul 2003 12:56:14 +0200
+
+jetty (4.2.11-3) unstable; urgency=low
+
+  * Creates /usr/share/java/webapps if necessary
+  * Not longer uses symlinks in ext but a debianized start.config
+  * Changed to multiline logging.
+  * Removed demo webapps and provides a preliminary debian jetty root
+  * Fixes /etc/defaults/jetty to be /etc/default/jetty
+
+ -- Philipp Meier <meier@meisterbohne.de>  Thu, 17 Jul 2003 12:56:03 +0200
+
+jetty (4.2.11-2) unstable; urgency=low
+
+  * Adds build dependencies on libmx4j-java and iblog4j-java
+  * Removes comment about "Tomcat 4" from /etc/jetty.init 
+  * Renamed debian/{pre,post}{inst,rm} to debian/jetty.*
+  * Enables javac.debug to provide useful stackstraces
+
+ -- Philipp Meier <meier@meisterbohne.de>  Tue, 15 Jul 2003 21:50:36 +0200
+
+jetty (4.2.11-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Philipp Meier <meier@meisterbohne.de>  Mon, 14 Jul 2003 13:21:36 +0200
+
