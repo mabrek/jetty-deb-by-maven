@@ -19,38 +19,38 @@ clean::
 
 binary-post-install/libjetty-java::
 # Jetty Libs
-	install $(JETTYDISTLIB)/jetty-client-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-client.jar
-	install $(JETTYDISTLIB)/jetty-continuation-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-continuation.jar
-	install $(JETTYDISTLIB)/jetty-deploy-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-deploy.jar
-	install $(JETTYDISTLIB)/jetty-http-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-http.jar
-	install $(JETTYDISTLIB)/jetty-io-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-io.jar
-	install $(JETTYDISTLIB)/jetty-jmx-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-jmx.jar
-	install $(JETTYDISTLIB)/jetty-jndi-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-jndi.jar
-	install $(JETTYDISTLIB)/jetty-jsp-2.1-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jsp/jetty-jsp-2.1.jar
-	install $(JETTYDISTLIB)/jetty-plus-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-plus.jar
-	install $(JETTYDISTLIB)/jetty-policy-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-policy.jar
-	install $(JETTYDISTLIB)/jetty-rewrite-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-rewrite.jar
-	install $(JETTYDISTLIB)/jetty-security-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-security.jar
-	install $(JETTYDISTLIB)/jetty-server-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-server.jar
-	install $(JETTYDISTLIB)/jetty-servlet-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-servlet.jar
-	install $(JETTYDISTLIB)/jetty-servlets-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-servlets.jar
-	install $(JETTYDISTLIB)/jetty-util-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-util.jar
-	install $(JETTYDISTLIB)/jetty-webapp-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-webapp.jar
-	install $(JETTYDISTLIB)/jetty-websocket-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-websocket.jar
-	install $(JETTYDISTLIB)/jetty-xml-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/lib/jetty-xml.jar
+	install $(JETTYDISTLIB)/jetty-client-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-client.jar
+	install $(JETTYDISTLIB)/jetty-continuation-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-continuation.jar
+	install $(JETTYDISTLIB)/jetty-deploy-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-deploy.jar
+	install $(JETTYDISTLIB)/jetty-http-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-http.jar
+	install $(JETTYDISTLIB)/jetty-io-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-io.jar
+	install $(JETTYDISTLIB)/jetty-jmx-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-jmx.jar
+	install $(JETTYDISTLIB)/jetty-jndi-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-jndi.jar
+	install $(JETTYDISTLIB)/jetty-jsp-2.1-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp/jetty-jsp-2.1.jar
+	install $(JETTYDISTLIB)/jetty-plus-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-plus.jar
+	install $(JETTYDISTLIB)/jetty-policy-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-policy.jar
+	install $(JETTYDISTLIB)/jetty-rewrite-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-rewrite.jar
+	install $(JETTYDISTLIB)/jetty-security-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-security.jar
+	install $(JETTYDISTLIB)/jetty-server-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-server.jar
+	install $(JETTYDISTLIB)/jetty-servlet-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-servlet.jar
+	install $(JETTYDISTLIB)/jetty-servlets-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-servlets.jar
+	install $(JETTYDISTLIB)/jetty-util-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-util.jar
+	install $(JETTYDISTLIB)/jetty-webapp-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-webapp.jar
+	install $(JETTYDISTLIB)/jetty-websocket-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-websocket.jar
+	install $(JETTYDISTLIB)/jetty-xml-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-xml.jar
 # Jetty JNDI 3rd Party Jars
-	install $(JETTYDISTLIB)/jndi/activation-1.1.jar $(DEB_DESTDIR)/usr/share/jetty/lib/jndi
-	install $(JETTYDISTLIB)/jndi/geronimo-jta_1.1_spec-1.1.1.jar $(DEB_DESTDIR)/usr/share/jetty/lib/jndi
-	install $(JETTYDISTLIB)/jndi/mail-1.4.1.jar $(DEB_DESTDIR)/usr/share/jetty/lib/jndi
+	install $(JETTYDISTLIB)/jndi/activation-1.1.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jndi
+	install $(JETTYDISTLIB)/jndi/geronimo-jta_1.1_spec-1.1.1.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jndi
+	install $(JETTYDISTLIB)/jndi/mail-1.4.1.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jndi
 # Jetty JSP 3rd Party Jars
-	install $(JETTYDISTLIB)/jsp/ecj-3.5.1.jar $(DEB_DESTDIR)/usr/share/jetty/lib/jsp
-	install $(JETTYDISTLIB)/jsp/jetty-jsp-2.1-7.1.6.v20100715.jar $(DEB_DESTDIR)/usr/share/jetty/lib/jsp
-	install $(JETTYDISTLIB)/jsp/jsp-2.1-glassfish-2.1.v20100127.jar $(DEB_DESTDIR)/usr/share/jetty/lib/jsp
-	install $(JETTYDISTLIB)/jsp/jsp-api-2.1-glassfish-2.1.v20100127.jar $(DEB_DESTDIR)/usr/share/jetty/lib/jsp
+	install $(JETTYDISTLIB)/jsp/ecj-3.5.1.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp
+	install $(JETTYDISTLIB)/jsp/jetty-jsp-2.1-7.1.6.v20100715.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp
+	install $(JETTYDISTLIB)/jsp/jsp-2.1-glassfish-2.1.v20100127.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp
+	install $(JETTYDISTLIB)/jsp/jsp-api-2.1-glassfish-2.1.v20100127.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp
 # Jetty Policy
-	install $(JETTYDISTLIB)/policy/jetty.policy $(DEB_DESTDIR)/usr/share/jetty/lib/policy
+	install $(JETTYDISTLIB)/policy/jetty.policy $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/policy
 # Jetty Start Jar
-	install $(JETTYDISTLIB)/jetty-start-$(DEB_UPSTREAM_VERSION).jar $(DEB_DESTDIR)/usr/share/jetty/start.jar
+	install $(JETTYDISTLIB)/jetty-start-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/start.jar
 
 get-orig-source:
 	uscan --download-version $(DEB_UPSTREAM_VERSION) --force-download --rename
