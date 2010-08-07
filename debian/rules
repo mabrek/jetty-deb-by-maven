@@ -7,14 +7,15 @@ DEB_VERBOSE_ALL := true
 DH_VERBOSE      := true
 DEB_INSTALL_CHANGELOGS_ALL := VERSION.txt
 JETTYDISTLIB         := jetty-distribution/target/distribution/lib
+MAVEN_REPOSITORY_OPTION := "-Dmaven.repo.local=$(CURDIR)/../.m2/repository"
 
 common-build-arch common-build-indep:: debian/stamp-mvn-build
 debian/stamp-mvn-build:
-	MAVEN_OPTS="-XX:MaxPermSize=256M" mvn -DskipTests -Dmaven.repo.local=$(CURDIR)/../.m2/repository -e install
+	MAVEN_OPTS="-XX:MaxPermSize=256M" mvn -DskipTests $(MAVEN_REPOSITORY_OPTION) -e install
 	touch debian/stamp-mvn-build
 
 clean::
-	mvn -Dmaven.repo.local=$(CURDIR)/../.m2/repository clean
+	mvn $(MAVEN_REPOSITORY_OPTION) clean
 	rm -f debian/stamp-mvn-build
 
 binary-post-install/libjetty-java::
