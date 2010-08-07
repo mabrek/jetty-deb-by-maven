@@ -24,5 +24,3 @@ cd $DIR
 if [ ! -d debian ] ; then
     rsync -azPS --exclude="*.swp" ../debian .
 fi
-
-echo $DIR
