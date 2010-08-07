@@ -3,6 +3,7 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/rules/patchsys-quilt.mk
 
+DEB_VERBOSE_ALL := true
 JAVA_HOME            := /usr/lib/jvm/java-6-openjdk
 DEB_INSTALL_CHANGELOGS_ALL := VERSION.txt
 JETTYDISTLIB         := jetty-distribution/target/distribution/lib
