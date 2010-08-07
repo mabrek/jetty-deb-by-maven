@@ -27,7 +27,6 @@ binary-post-install/libjetty-java::
 	install $(JETTYDISTLIB)/jetty-io-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-io.jar
 	install $(JETTYDISTLIB)/jetty-jmx-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-jmx.jar
 	install $(JETTYDISTLIB)/jetty-jndi-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-jndi.jar
-	install $(JETTYDISTLIB)/jetty-jsp-2.1-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jsp/jetty-jsp-2.1.jar
 	install $(JETTYDISTLIB)/jetty-plus-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-plus.jar
 	install $(JETTYDISTLIB)/jetty-policy-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-policy.jar
 	install $(JETTYDISTLIB)/jetty-rewrite-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-rewrite.jar
