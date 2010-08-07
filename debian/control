@@ -3,7 +3,7 @@ Section: java
 Priority: optional
 Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
 Uploaders: Philipp Meier <meier@fnogol.de>, Michael Koch <konqueror@gmx.de>, Thierry Carrez <thierry.carrez@ubuntu.com>
-Build-Depends: debhelper (>= 6), cdbs (>> 0.4.5.3), openjdk-6-jdk, ant, maven-repo-helper, quilt, subversion
+Build-Depends: debhelper (>= 6), cdbs (>> 0.4.5.3), openjdk-6-jdk, quilt, subversion
 Standards-Version: 3.8.3
 Homepage: http://www.eclipse.org/jetty/
 
