@@ -1,1 +1,1 @@
-target/distribution/javadoc/*         usr/share/doc/jetty/api
+target/site/apidocs/*         usr/share/doc/jetty/api
