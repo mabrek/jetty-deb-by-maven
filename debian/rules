@@ -5,9 +5,17 @@ include /usr/share/cdbs/1/rules/patchsys-quilt.mk
 
 DEB_VERBOSE_ALL := true
 DH_VERBOSE      := true
-JAVA_HOME            := /usr/lib/jvm/java-6-openjdk
 DEB_INSTALL_CHANGELOGS_ALL := VERSION.txt
 JETTYDISTLIB         := jetty-distribution/target/distribution/lib
+
+common-build-arch common-build-indep:: debian/stamp-mvn-build
+debian/stamp-mvn-build:
+	MAVEN_OPTS="-XX:MaxPermSize=256M" mvn -DskipTests install
+	touch debian/stamp-mvn-build
+
+clean::
+	mvn clean
+	rm -f debian/stamp-mvn-build
 
 binary-post-install/libjetty-java::
 # Jetty Libs
