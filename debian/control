@@ -33,7 +33,7 @@ Description: Javadoc for the Jetty API
 Package: jetty
 Architecture: all
 Depends: ${misc:Depends}, libjetty-java (>= ${source:Version}),
- libjetty-java-doc (>= ${source:Version}), adduser
+ adduser
 Description: Java servlet engine and webserver
  Jetty is an Open Source HTTP Servlet Server written in 100% Java.
  It is designed to be light weight, high performance, embeddable,
