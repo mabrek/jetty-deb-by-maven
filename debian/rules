@@ -14,7 +14,7 @@ debian/stamp-mvn-build:
 	touch debian/stamp-mvn-build
 
 clean::
-	find -type d -name target -exec rf -vr '{}' \;
+	mvn -Dmaven.repo.local=$(CURDIR)/../.m2/repository clean
 	rm -f debian/stamp-mvn-build
 
 binary-post-install/libjetty-java::
