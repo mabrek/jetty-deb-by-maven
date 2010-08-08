@@ -2,6 +2,7 @@ debian/start.config                   etc/jetty
 jetty-distribution/target/distribution/etc/*             etc/jetty
 jetty-distribution/target/distribution/contexts          etc/jetty
 jetty-distribution/target/distribution/resources         usr/share/jetty
+jetty-distribution/target/distribution/webapps/test.war  var/lib/jetty/webapps
 README.txt                            usr/share/doc/jetty
 VERSION.txt                           usr/share/doc/jetty
 LICENSE-CONTRIBUTOR/cla-*             usr/share/doc/jetty/LICENSES
