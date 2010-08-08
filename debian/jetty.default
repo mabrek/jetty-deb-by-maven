@@ -3,9 +3,6 @@
 # change to 0 to allow Jetty to start
 NO_START=1
 
-# change to 'no' or uncomment to use the default setting in /etc/default/rcS 
-VERBOSE=yes
-
 # Run Jetty as this user ID (default: jetty)
 # Set this to an empty string to prevent Jetty from starting automatically
 JETTY_USER=jetty
@@ -21,10 +18,14 @@ JETTY_USER=jetty
 #JETTY_SHUTDOWN=30
 
 # Additional arguments to pass to Jetty    
-#JETTY_ARGS=
+JETTY_ARGS="OPTIONS=Server /etc/jetty/jetty.xml /etc/jetty/jetty-deploy.xml"
 
 # Extra options to pass to the JVM         
-JAVA_OPTIONS="-Xmx256m -Djava.awt.headless=true -Dorg.eclipse.jetty.util.log.class=org.eclipse.jetty.util.log.StdErrLog"
+JAVA_OPTIONS=(
+	"-Xmx256m"
+	"-Djava.awt.headless=true"
+	"-Dorg.eclipse.jetty.util.log.class=org.eclipse.jetty.util.log.StdErrLog"
+)
 
 # Home of Java installation.
 #JAVA_HOME=
@@ -38,10 +39,7 @@ JAVA_OPTIONS="-Xmx256m -Djava.awt.headless=true -Dorg.eclipse.jetty.util.log.cla
 #JSP_COMPILER=jikes
 
 # Jetty uses a directory to store temporary files like unpacked webapps
-JETTY_TMP=/var/cache/jetty
-
-# Jetty uses a config file to setup its boot classpath
-JETTY_START_CONFIG=/etc/jetty/start.config
+TMPDIR=/var/cache/jetty
 
 # Default for number of days to keep old log files in /var/log/jetty/
 #LOGFILE_DAYS=14
