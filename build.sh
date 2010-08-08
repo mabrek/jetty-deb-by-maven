@@ -8,6 +8,6 @@ LOGFILE=`pwd`/build.log
 
 cd $DIR
 
-debuild -uc -us 2>&1 | tee $LOGFILE
+debuild -b -uc -us 2>&1 | tee $LOGFILE
 
 cd -
