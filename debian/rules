@@ -6,7 +6,8 @@ include /usr/share/cdbs/1/rules/patchsys-quilt.mk
 DEB_VERBOSE_ALL := true
 DH_VERBOSE      := true
 DEB_INSTALL_CHANGELOGS_ALL := VERSION.txt
-JETTYDISTLIB         := jetty-distribution/target/distribution/lib
+JETTYDIST         := $(CURDIR)/jetty-distribution/target/distribution/
+JETTYDISTLIB         := $(JETTYDIST)/lib
 MAVEN_REPOSITORY_OPTION := "-Dmaven.repo.local=$(CURDIR)/../.m2/repository"
 
 common-build-arch common-build-indep:: debian/stamp-mvn-build
@@ -55,7 +56,7 @@ binary-post-install/libjetty-java::
 	install -d $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/policy
 	install -m 644 $(JETTYDISTLIB)/policy/jetty.policy $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/policy
 # Jetty Start Jar
-	install -m 644 $(JETTYDISTLIB)/../start.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/
+	install -m 644 $(JETTYDIST)/start.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/
 
 get-orig-source:
 	uscan --download-version $(DEB_UPSTREAM_VERSION) --force-download --rename
