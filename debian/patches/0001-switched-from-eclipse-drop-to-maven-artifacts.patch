@@ -1,17 +1,17 @@
-From 9031c3e8661d234907fe5541502f4abb963927be Mon Sep 17 00:00:00 2001
+From 608ffaa4bd7c8dddae5520c0662a3c97a5716b4f Mon Sep 17 00:00:00 2001
 From: Anton Lebedevich <mabrek@gmail.com>
-Date: Sat, 7 Aug 2010 00:19:19 +0400
+Date: Sun, 8 Aug 2010 12:16:26 +0400
 Subject: [PATCH 1/2] switched from eclipse drop to maven artifacts
 
 ---
- jetty-distribution/pom.xml |  108 +++++++++++++++++++++++++------------------
- 1 files changed, 63 insertions(+), 45 deletions(-)
+ jetty-distribution/pom.xml |  116 ++++++++++++++++++++++++--------------------
+ 1 files changed, 63 insertions(+), 53 deletions(-)
 
 diff --git a/jetty-distribution/pom.xml b/jetty-distribution/pom.xml
-index d82ef70..4fd432b 100644
+index d82ef70..a543eca 100644
 --- a/jetty-distribution/pom.xml
 +++ b/jetty-distribution/pom.xml
-@@ -61,59 +61,14 @@
+@@ -61,59 +61,6 @@
              </goals>
              <configuration>
                <tasks>
@@ -40,21 +40,21 @@ index d82ef70..4fd432b 100644
 -
 -                <!-- Step 2: copy the orbit artifact from orbit-cache to the appropriate lib directory -->
 -
-                 <!-- ${jetty.home}/lib/ -->
-                 <mkdir dir="${assembly-directory}/lib" />
+-                <!-- ${jetty.home}/lib/ -->
+-                <mkdir dir="${assembly-directory}/lib" />
 -                <copy file="${orbit-cache}/javax.servlet_${orbit-javax-servlet-version}.jar" tofile="${assembly-directory}/lib/servlet-api-2.5.jar" />
- 
-                 <!-- ${jetty.home}/lib/jndi/ -->
-                 <mkdir dir="${assembly-directory}/lib/jndi" />
+-
+-                <!-- ${jetty.home}/lib/jndi/ -->
+-                <mkdir dir="${assembly-directory}/lib/jndi" />
 -                <copy todir="${assembly-directory}/lib/jndi">
 -                  <fileset dir="${orbit-cache}">
 -                    <include name="javax.activation_${orbit-javax-activation-version}.jar" />
 -                    <include name="javax.mail.glassfish_${orbit-javax-mail-glassfish-version}.jar" />
 -                  </fileset>
 -                </copy>
- 
-                 <!-- ${jetty.home}/lib/jsp/ -->
-                 <mkdir dir="${assembly-directory}/lib/jsp" />
+-
+-                <!-- ${jetty.home}/lib/jsp/ -->
+-                <mkdir dir="${assembly-directory}/lib/jsp" />
 -                <copy todir="${assembly-directory}/lib/jsp">
 -                  <fileset dir="${orbit-cache}">
 -                    <include name="javax.el_${orbit-javax-el-version}.jar" />
@@ -71,7 +71,7 @@ index d82ef70..4fd432b 100644
  
                  <copy file="../VERSION.txt" todir="${assembly-directory}" />
                  <chmod dir="${assembly-directory}/bin" perm="755" includes="**/*.sh" />
-@@ -466,6 +421,42 @@
+@@ -466,6 +413,42 @@
                    <outputDirectory>${assembly-directory}/lib</outputDirectory>
                  </artifactItem>
                  <artifactItem>
@@ -114,7 +114,7 @@ index d82ef70..4fd432b 100644
                    <groupId>org.eclipse.jetty</groupId>
                    <artifactId>jetty-jsp-2.1</artifactId>
                    <version>${project.version}</version>
-@@ -474,6 +465,33 @@
+@@ -474,6 +457,33 @@
                    <includes>**</includes>
                    <outputDirectory>${assembly-directory}/lib/jsp</outputDirectory>
                  </artifactItem>

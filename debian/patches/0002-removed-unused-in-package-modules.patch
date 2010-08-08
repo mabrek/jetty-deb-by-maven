@@ -1,4 +1,4 @@
-From 1aed36616c540bc5d98e6438c252721419a628fd Mon Sep 17 00:00:00 2001
+From 92ae835c9d931a2147a895b1ae2403acf2b3d599 Mon Sep 17 00:00:00 2001
 From: Anton Lebedevich <mabrek@gmail.com>
 Date: Sun, 8 Aug 2010 01:09:21 +0400
 Subject: [PATCH 2/2] removed unused in package modules
