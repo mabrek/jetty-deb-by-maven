@@ -18,7 +18,7 @@ JETTY_USER=jetty
 #JETTY_SHUTDOWN=30
 
 # Additional arguments to pass to Jetty    
-JETTY_ARGS="OPTIONS=Server /etc/jetty/jetty.xml /etc/jetty/jetty-deploy.xml"
+JETTY_ARGS="OPTIONS=Server,jsp /etc/jetty/jetty.xml /etc/jetty/jetty-deploy.xml"
 
 # Extra options to pass to the JVM         
 JAVA_OPTIONS=(
