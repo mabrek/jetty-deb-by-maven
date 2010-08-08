@@ -13,11 +13,13 @@ MAVEN_REPOSITORY_OPTION := "-Dmaven.repo.local=$(CURDIR)/../.m2/repository"
 common-build-arch common-build-indep:: debian/stamp-mvn-build
 debian/stamp-mvn-build:
 	MAVEN_OPTS="-XX:MaxPermSize=256M" mvn -DskipTests $(MAVEN_REPOSITORY_OPTION) -e install
+	cp $(JETTYDIST)/bin/jetty.sh $(CURDIR)/debian/jetty.init
 	mvn $(MAVEN_REPOSITORY_OPTION) -e -Paggregate-site javadoc:aggregate
 	touch debian/stamp-mvn-build
 
 clean::
 	mvn $(MAVEN_REPOSITORY_OPTION) clean
+	rm -f $(CURDIR)/debian/jetty.init
 	rm -f debian/stamp-mvn-build
 
 binary-post-install/libjetty-java::
