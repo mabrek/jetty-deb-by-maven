@@ -43,6 +43,7 @@ binary-post-install/libjetty-java::
 	install -m 644 $(JETTYDISTLIB)/jetty-webapp-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-webapp.jar
 	install -m 644 $(JETTYDISTLIB)/jetty-websocket-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-websocket.jar
 	install -m 644 $(JETTYDISTLIB)/jetty-xml-$(DEB_UPSTREAM_VERSION).jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jetty-xml.jar
+	install -m 644 $(JETTYDISTLIB)/servlet-api-2.5.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/
 # Jetty JNDI 3rd Party Jars
 	install -d $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jndi
 	install -m 644 $(JETTYDISTLIB)/jndi/activation-1.1.jar $(CURDIR)/debian/libjetty-java/usr/share/jetty/lib/jndi
